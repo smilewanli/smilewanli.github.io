@@ -1143,8 +1143,9 @@ button::-moz-focus-inner, input::-moz-focus-inner {
 
 .display-2 {
     font-family: "montserrat-medium", sans-serif;
-    font-size: 5.2rem;
+    font-size: 1.8rem;
     line-height: 1.255;
+    line-height: 1.75;
     color: #000000;
     margin-top: 0;
 }
@@ -1182,7 +1183,7 @@ button::-moz-focus-inner, input::-moz-focus-inner {
         font-size: 7.2rem;
     }
     .display-2 {
-        font-size: 4.4rem;
+        font-size: 2.2rem;
     }
 }
 
@@ -1191,7 +1192,7 @@ button::-moz-focus-inner, input::-moz-focus-inner {
         font-size: 6.5rem;
     }
     .display-2 {
-        font-size: 4rem;
+        font-size: 2rem;
     }
 }
 
@@ -1200,7 +1201,7 @@ button::-moz-focus-inner, input::-moz-focus-inner {
         font-size: 5rem;
     }
     .display-2 {
-        font-size: 3.3rem;
+        font-size: 1.9rem;
     }
     .subhead {
         font-size: 1.5rem;
@@ -1212,7 +1213,7 @@ button::-moz-focus-inner, input::-moz-focus-inner {
         font-size: 4.2rem;
     }
     .display-2 {
-        font-size: 3rem;
+        font-size: 1.8rem;
     }
 }
 
@@ -1405,7 +1406,7 @@ button::-moz-focus-inner, input::-moz-focus-inner {
     -webkit-transition: all 0.5s ease;
     transition: all 0.5s ease;
     -webkit-transform: translateZ(0);
-    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
     -webkit-transform: translateX(100%);
     -ms-transform: translateX(100%);
     transform: translateX(100%);
