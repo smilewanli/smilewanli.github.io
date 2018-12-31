@@ -14,7 +14,7 @@ $(document).ready(()=>{
 function changeLevel(event){
     num = event.data.level;
     $("h1").text(temple[num]);
-    $("h3").text(question[num] );
+    $("#question").text(question[num] );
     $("#questionPic").attr("src","images/portfolio/" + picture[num]);
 }
 
