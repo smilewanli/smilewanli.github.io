@@ -1,0 +1,191 @@
+.game-panel {
+    list-style: none;
+    margin: 0;
+    position: fixed;
+    bottom: 1rem;
+    right: 35%;
+    transform: translate3d(0, -50%, 0);
+    width: 30%;
+}
+
+.game-panel a {
+    float: left;
+    width: 20%;
+    padding: 0px;
+    margin: 0px;
+}
+
+.game-panel i {
+    right: 0;
+    float: left;
+    width: 10px;
+    height: 10px;
+    line-height: calc(10px - 4px);
+    border: 2px solid #82B361;
+    border-radius: 50%;
+    background: white;
+}
+
+.game-panel span {
+    display: inline-block;
+    width: 15%;
+    height: 12%;
+}
+
+.level-pages {
+    width: 100%;
+    height: 100%;
+}
+
+/* ===================================================================
+ * # game_level 
+ *
+ * ------------------------------------------------------------------- */
+ .s-game_level {
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    position: relative;
+    display: table;
+    padding: 0;
+}
+
+.s-game_level .shadow-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: .4;
+    background: -moz-linear-gradient(top, transparent 0%, rgba(0, 0, 0, 0.8) 100%);
+    background: -webkit-linear-gradient(top, transparent 0%, rgba(0, 0, 0, 0.8) 100%);
+    background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.8) 100%);
+    filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#cc000000', GradientType=0);
+}
+
+.s-game_level .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: .75;
+    background-color: #000000;
+}
+
+.no-js .s-game_level {
+    background: #000000;
+}
+
+
+/* ------------------------------------------------------------------- 
+ * ## game_level content
+ * ------------------------------------------------------------------- */
+
+.game_level-content {
+    display: table-cell;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    vertical-align: middle;
+}
+
+.game_level-content img{
+    margin: 0;
+    height: auto;
+    width: 50%;
+    max-height: 300px;
+    left: 25%;
+    position: relative;
+}
+
+.form{
+    width: 40%;
+    height: 3rem;
+    margin-top: 1rem;
+    margin-left: 30%;
+    margin-right: 30%;
+    position: relative;
+    display: inline-block;
+}
+
+.game_level-content button{
+    height: 2.5rem;
+    position: relative;
+    border-radius: 5px;
+    border: 0;
+    background: white;
+    font-size: 1rem;
+    width: 20%;
+    margin-left: 40%;
+    margin-right: 40%;
+    display: inline-block;
+}
+
+.game_level-content input{
+    font-family: "微軟正黑體",  "montserrat-medium", sans-serif;
+    font-size: 1.6rem;
+    color: rgba(255, 255, 255, 0.5);
+    width: 50%;
+    height: 2.5rem;
+    top: 0;
+    margin-top: 1rem;
+    margin-left: 25%;
+    margin-right: 25%;
+
+    position: relative;
+    border-radius: 5px;
+    border: 0px;
+    background: #82B361;
+    text-align: center;
+}
+
+.game_level-content h3 {
+    font-family: "微軟正黑體",  "montserrat-medium", sans-serif;
+    font-size: 1.6rem;
+    color: rgba(255, 255, 255, 0.5);
+    text-transform: uppercase;
+    letter-spacing: .3rem;
+    margin-top: 0;
+    position: relative;
+    text-align: center;
+}
+
+.game_level-content h1 {
+    font-family: "微軟正黑體",  "montserrat-medium", sans-serif;
+    font-size: 3rem;
+    position: relative;
+    top: 0;
+    margin-top: 0;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+.game_level-content__main {
+    padding-top: 0rem;
+    position: relative;
+}
+
+.game_level-content__line {
+    display: block;
+    width: 2px;
+    height: 10.2rem;
+    background-color: #1C2F57;
+    position: absolute;
+    right: 7.2rem;
+    bottom: 0;
+}
+
+.game_level-content a{
+    border: solid;
+    border-color: white;
+    border-width: 1px;    
+    position: relative;
+    background: transparent;
+    width: 20%;
+    margin-left: 40%;
+    margin-right: 40%;
+    color: #FFFFFF;
+    text-align: center;
+    display: inline-block;
+}
