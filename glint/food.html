@@ -130,23 +130,39 @@
     <section id='food-map'>
         <div class="row section-header">
             <h2 class="display-1--light">點擊地圖獲取美食資訊</h2>
-            <img src="images/food/map.PNG" alt="Map" usemap="#ImageMap">
+            <img src="images/food/map.PNG" alt="Map" usemap="#ImageMap" id="map">
+            <script>
+                console.log(map.clientHeight);
+                console.log(map.clientWidth);
+                var height=1506;
+                var width=1216;
+               
+              </script>
             <map name="#ImageMap">
-                <area shape="circle" coords="655,966,10" alt="303 drink " href="#" data-open="one">
-                <area shape="circle" coords="724,1235,10" alt="tutofish " href="#" data-open="two">
-                <area shape="circle" coords="816,1082,10" alt="goat " href="#" data-open="three">
-                <area shape="circle" coords="769,1187,10" alt="duck " href="#" data-open="four">
-                <area shape="circle" coords="711,1178,10" alt="yahome " href="#" data-open="five">
-                <area shape="circle" coords="697,1108,10" alt="firetown " href="#" data-open="six">
-                <area shape="circle" coords="708,1074,10" alt="ginfu " href="#" data-open="seven">
-                <area shape="circle" coords="696,1042,10" alt="lin " href="#" data-open="eight">
-                <area shape="circle" coords="599,800,10" alt="gipai" href="#" data-open="ten">
-                <area shape="circle" coords="622,976,10" alt="one " href="#" data-open="nine">
-                <area shape="circle" coords="508,866,10" alt="duck2" href="#" data-open="eleven">
-                <area shape="circle" coords="523,898,10" alt="coffee" href="#" data-open="twelve">
-                <area shape="circle" coords="606,856,10" alt="noodles" href="#" data-open="thirteen">
-                <area shape="circle" coords="610,673,10" alt="beaf" href="#" data-open="fourteen">
-                <area shape="circle" coords="744,1153,10" alt="duck2" href="#" data-open="fifteen">
+                <area shape="circle" coords="655,966,10" alt="303 drink " href="#" data-open="one" id="fooda">
+                <area shape="circle" coords="724,1235,10" alt="tutofish " href="#" data-open="two" id="foodb">
+                <area shape="circle" coords="816,1082,10" alt="goat " href="#" data-open="three" id="foodc">
+                <area shape="circle" coords="769,1187,10" alt="duck " href="#" data-open="four" id="foodd">
+                <area shape="circle" coords="711,1178,10" alt="yahome " href="#" data-open="five" id="foode">
+                <area shape="circle" coords="697,1108,10" alt="firetown " href="#" data-open="six" id="foodf">
+                <area shape="circle" coords="708,1074,10" alt="ginfu " href="#" data-open="seven" id="foodg">
+                <area shape="circle" coords="696,1042,10" alt="lin " href="#" data-open="eight" id="foodh">
+                <area shape="circle" coords="599,800,10" alt="gipai" href="#" data-open="ten" id="foodi">
+                <area shape="circle" coords="622,976,10" alt="one " href="#" data-open="nine" id="foodj">
+                <area shape="circle" coords="508,866,10" alt="duck2" href="#" data-open="eleven" id="foodk">
+                <area shape="circle" coords="523,898,10" alt="coffee" href="#" data-open="twelve" id="foodl">
+                <area shape="circle" coords="606,856,10" alt="noodles" href="#" data-open="thirteen" id="foodm">
+                <area shape="circle" coords="610,673,10" alt="beaf" href="#" data-open="fourteen" id="foodn">
+                <area shape="circle" coords="744,1153,10" alt="duck2" href="#" data-open="fifteen" id="foodo">
+                <script>
+                    var radius=10;
+                    var onex=655,oney=966;
+                    onex=(onex/width)*map.clientWidth;
+                    oney=(oney/height)*map.clientHeight;
+                    
+                    fooda.coords=onex.toString()+","+oney.toString()+","+radius.toString();
+                    console.log(fooda);
+                </script>
             </map>
             <div id="one" class="reveal" data-reveal>
                 <h2 id="modalTitle">303冷飲店</h2>
@@ -320,6 +336,7 @@
 
     <script>
         $(document).foundation();
+        
     </script>
 
 </body>
