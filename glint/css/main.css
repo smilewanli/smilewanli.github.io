@@ -1173,6 +1173,13 @@ button::-moz-focus-inner, input::-moz-focus-inner {
     color: #000000;
 }
 
+.subhead--map {
+    text-align: center;
+    color: #FFFFFF;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
 
 /* ------------------------------------------------------------------- 
  * responsive:
