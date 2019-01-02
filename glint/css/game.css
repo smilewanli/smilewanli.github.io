@@ -6,6 +6,7 @@
     right: 35%;
     transform: translate3d(0, -50%, 0);
     width: 30%;
+    display: none;
 }
 
 .game-panel a {
@@ -109,6 +110,10 @@
     display: inline-block;
 }
 
+.gameing{
+    display: none;
+}
+
 .game_level-content button{
     height: 2.5rem;
     position: relative;
@@ -188,4 +193,17 @@
     color: #FFFFFF;
     text-align: center;
     display: inline-block;
+}
+
+
+.info{
+    margin-left: 40%;
+    margin-right: 40%;
+    width: 20%;
+    color: #FFFFFF;
+}
+
+.info input{
+    width: 1rem;
+    vertical-align: middle;
 }
