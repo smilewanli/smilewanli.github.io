@@ -3,6 +3,7 @@ var question = ["萬年萬年萬年萬年問題", "保安保安保安保安問�
 var picture = ["wannian.jpg", "baoan.jpg", "tongan.jpg", "chunde.jpg",  "chunde.jpg"];
 var ans = ["A", "B", "C", "D", "E"];
 var nowLevel;
+var clickDownX;
 
 $(document).ready(()=>{
     $("#level1").click({level: 0}, changeLevel);
@@ -13,11 +14,45 @@ $(document).ready(()=>{
     $("#submit").click(submitInfo);
     $("#OK").click(submitAns);
     $("#gameing").css("display","none");
-    $("#genGame").css("display","block");    
+    $("#genGame").css("display","block");
+
+    $("#game_level").mousedown(()=>{
+        clickDownX = getCursorPosition();        
+    });
+    
+    $("#game_level").mouseup(()=>{
+        swipe(getCursorPosition() - clickDownX);
+    })
+
 });
 
+function getCursorPosition()
+{
+    var posx = 0;
+    var e = window.event;
+    if (e.pageX || e.pageY)     {
+        posx = e.pageX- document.documentElement.scrollLeft- document.body.scrollLeft;
+    }
+    else if (e.clientX || e.clientY)     {  //for IE
+        posx = e.clientX ;
+    }
+    return posx;
+}
+
+function swipe(swipewidth){
+    if(swipewidth < -50 && nowLevel < 4){
+        changeLevelByNum(nowLevel + 1);
+    }else if(swipewidth > 50 && nowLevel > 0){
+        changeLevelByNum(nowLevel - 1);
+    }
+}
+
+
 function changeLevel(event){
-    num = event.data.level;
+    changeLevelByNum(event.data.level);
+}
+
+function changeLevelByNum(num){
     $("h1").text(temple[num]);
     $("#question").text(question[num] );
     $("#questionPic").attr("src","images/portfolio/" + picture[num]);
@@ -30,13 +65,7 @@ function submitInfo(){
     $("#gameing").css("display","block");
     $("#genGame").css("display","none");
     $(".game-panel").css("display","block");
-
-    /*show level 1*/
-    $("h1").text(temple[0]);
-    $("#question").text(question[0] );
-    $("#questionPic").attr("src","images/portfolio/" + picture[0]);
-    $("#answer").val("");
-    nowLevel = 0;
+    changeLevelByNum(0);
 }
 
 function submitAns(){
@@ -48,4 +77,16 @@ function submitAns(){
     else{
         $("#answer").val("");
     }
+}
+
+function swiperightHandler(){
+    if(nowLevel > 0)
+        changeLevelByNum(nowLevel - 1);
+    alert(nowLevel);
+}
+
+function swipeleftHandler(){
+    if(nowLevel < 4)
+        changeLevelByNum(nowLevel + 1);
+    alert(nowLevel);
 }
