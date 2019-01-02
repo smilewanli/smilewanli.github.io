@@ -4,6 +4,7 @@ var picture = ["wannian.jpg", "baoan.jpg", "tongan.jpg", "chunde.jpg",  "chunde.
 var ans = ["A", "B", "C", "D", "E"];
 var nowLevel;
 var clickDownX;
+var lastX;
 
 $(document).ready(()=>{
     $("#level1").click({level: 0}, changeLevel);
@@ -24,6 +25,19 @@ $(document).ready(()=>{
         swipe(getCursorPosition() - clickDownX);
     })
 
+    $('#game_level').on('touchstart', (e)=>{
+        clickDownX = e.originalEvent.touches[0].pageX;
+    });
+
+    $('#game_level').on('touchmove', (e)=>{
+        lastX = e.originalEvent.touches[0].pageX;
+    });
+
+    $('#game_level').on('touchend', (e)=>{        
+        swipe(lastX - clickDownX);
+    });
+
+
 });
 
 function getCursorPosition()
@@ -38,6 +52,7 @@ function getCursorPosition()
     }
     return posx;
 }
+
 
 function swipe(swipewidth){
     if(swipewidth < -50 && nowLevel < 4){
@@ -61,7 +76,6 @@ function changeLevelByNum(num){
 }
 
 function submitInfo(){
-    /*gaming view*/
     $("#gameing").css("display","block");
     $("#genGame").css("display","none");
     $(".game-panel").css("display","block");
