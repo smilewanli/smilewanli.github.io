@@ -16,6 +16,9 @@ $(document).ready(()=>{
     $("#OK").click(submitAns);
     $("#gameing").css("display","none");
     $("#genGame").css("display","block");
+    $("#arrows").css("display","none");
+    $(".larrow").click({dir: 1}, clickArrow);
+    $(".rarrow").click({dir: -1}, clickArrow);
 
     $("#game_level").mousedown(()=>{
         clickDownX = getCursorPosition();        
@@ -75,10 +78,18 @@ function changeLevelByNum(num){
     nowLevel = num;
 }
 
+function clickArrow(event){
+    direction = event.data.dir;//1 for left, -1 for right
+    if(direction > 0 && nowLevel > 0)
+        changeLevelByNum(nowLevel - 1);
+    else if(direction < 0 && nowLevel < 4)
+        changeLevelByNum(nowLevel + 1);
+}
+
 function submitInfo(){
     $("#gameing").css("display","block");
     $("#genGame").css("display","none");
-    $(".game-panel").css("display","block");
+    $("#arrows").css("display","block");
     changeLevelByNum(0);
 }
 
