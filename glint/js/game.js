@@ -96,7 +96,7 @@ function submitInfo(){
 function submitAns(){
     var inputAns = $("#answer").val();
     if (inputAns == ans[nowLevel]){
-        $("h3").text("(完成)");
+        $("#question").text("(完成)");
         question[nowLevel] = "(完成)";
     }
     else{
