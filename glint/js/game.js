@@ -6,6 +6,8 @@ var nowLevel;
 var clickDownX;
 var lastX;
 
+var select = [false, false, false];
+
 $(document).ready(()=>{
     $("#level1").click({level: 0}, changeLevel);
     $("#level2").click({level: 1}, changeLevel);
@@ -19,6 +21,10 @@ $(document).ready(()=>{
     $("#arrows").css("display","none");
     $(".larrow").click({dir: 1}, clickArrow);
     $(".rarrow").click({dir: -1}, clickArrow);
+
+    $("#rice").click({kind: 0}, clickCircle);
+    $("#noodles").click({kind: 1}, clickCircle);
+    $("#toffee").click({kind: 2}, clickCircle);
 
     $("#game_level").mousedown(()=>{
         clickDownX = getCursorPosition();        
@@ -114,4 +120,17 @@ function swipeleftHandler(){
     if(nowLevel < 4)
         changeLevelByNum(nowLevel + 1);
     alert(nowLevel);
+}
+
+
+function clickCircle(event){
+    let name = ["#rice", "#noodles", "#toffee"];
+    kind = event.data.kind;
+    if(select[kind]){
+        $(name[kind]).css("opacity","0.5");
+    }
+    else{
+        $(name[kind]).css("opacity","1");
+    }
+    select[kind] = !select[kind];
 }
