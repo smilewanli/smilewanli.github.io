@@ -20,21 +20,14 @@ function initMap() {
         beaf: { lat: 22.928612, lng: 120.182022, title: '陳記牛肉湯'  }
     }
 
-    var labels = ['灣裡303茶飲店', '𩵚魠魚焿', '咩灣里羊肉店' ,'美月鴨肉飯' , '葉家水煎包' , 
-    '火城麵店' ,'京富號萬年富粿' , '林記糕鴨店', '一味香餅舖' ,'88巷弄咖啡', '陳記牛肉湯']
-
-    var labels = 'ABCDEFGHIJK'
-
-    var markers = locations.map(function (location, i) {
-        return new google.maps.Marker({
-            position: location,
-            label: labels[i % labels.length]
-        })
-    })
-    // Add a marker clusterer to manage the markers.
-    var markerCluster = new MarkerClusterer(map, markers,
-        { imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m' });
+    for (i = 0; i < locations.length; i++) {
+        marker = new google.maps.Marker({
+            position: new google.maps.LatLng(locations[i]['lat'], locations[i]['lng']),
+            map: map
+        });
+    }
 }
+
 var locations = [
     { lat: 22.925842, lng: 120.182303 },
     { lat: 22.923150, lng: 120.183252 },
