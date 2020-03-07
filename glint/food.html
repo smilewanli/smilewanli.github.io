@@ -30,6 +30,7 @@
     ================================================== -->
     <script src="js/modernizr.js"></script>
     <script src="js/pace.min.js"></script>
+    <script src="js/map.js"></script>
     <script src="js/vendor/jquery.js"></script>
     <script src="js/vendor/foundation.min.js"></script>
     <script src="js/vendor/what-input.js"></script>
@@ -110,7 +111,8 @@
 
         <ul class="home-social">
             <li>
-                <a href="https://www.facebook.com/SmileWanli"><i class="fa fa-facebook" aria-hidden="true"></i><span>Facebook</span></a>
+                <a href="https://www.facebook.com/SmileWanli"><i class="fa fa-facebook"
+                        aria-hidden="true"></i><span>Facebook</span></a>
             </li>
             <li>
                 <a href="#0"><i class="fa fa-twitter" aria-hidden="true"></i><span>Twiiter</span></a>
@@ -130,14 +132,24 @@
     <section id='food-map'>
         <div class="row section-header">
             <h2 class="display-1--light">點擊地圖獲取美食資訊</h2>
+
+            <script> </script>
+            <script async defer
+                src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDY2je_FQXVH6RnhYK0tQke4B92poCkhl4&callback=initMap"
+                title="Google">
+                </script>
+            <div id="map"></div>
+
+            <!--  Map
+
             <img src="images/food/map.PNG" alt="Map" usemap="#ImageMap" id="map">
             <script>
                 console.log(map.clientHeight);
                 console.log(map.clientWidth);
-                var height=1506;
-                var width=1216;
-               
-              </script>
+                var height = 1506;
+                var width = 1216;
+
+            </script>
             <map name="#ImageMap">
                 <area shape="circle" coords="655,966,10" alt="303 drink " href="#" data-open="one" id="fooda">
                 <area shape="circle" coords="724,1235,10" alt="tutofish " href="#" data-open="two" id="foodb">
@@ -155,69 +167,69 @@
                 <area shape="circle" coords="610,673,10" alt="beaf" href="#" data-open="fourteen" id="foodn">
                 <area shape="circle" coords="744,1153,10" alt="duck2" href="#" data-open="fifteen" id="foodo">
                 <script>
-                    var radius=10;
-                    radius=(radius/width)*map.clientWidth;
-                    var onex=655,oney=966;
-                    var twox=724,twoy=1235;
-                    var threex=816,threey=1082;
-                    var fourx=769,foury=1187;
-                    var fivex=711,fivey=1178;
-                    var sixx=697,sixy=1108;
-                    var sevenx=708,seveny=1074;
-                    var eightx=696,eighty=1042;
-                    var ninex=599,niney=800;
-                    var tenx=622,teny=976;
-                    var elevenx=508,eleveny=866;
-                    var twelvex=523,twelvey=898;
-                    var thirteenx=606,thirteeny=856;
-                    var fourteenx=610,fourteeny=673;
-                    var fifteenx=744,fifteeny=1153;
-                    onex=(onex/width)*map.clientWidth;
-                    oney=(oney/height)*map.clientHeight;                    
-                    twox=(twox/width)*map.clientWidth;
-                    twoy=(twoy/height)*map.clientHeight;
-                    threex=(threex/width)*map.clientWidth;
-                    threey=(threey/height)*map.clientHeight;
-                   
-                    fourx=(fourx/width)*map.clientWidth;
-                    foury=(foury/height)*map.clientHeight;
-                    fivex=(fivex/width)*map.clientWidth;
-                    fivey=(fivey/height)*map.clientHeight;
-                    sixx=(sixx/width)*map.clientWidth;
-                    sixy=(sixy/height)*map.clientHeight;
-                    sevenx=(sevenx/width)*map.clientWidth;
-                    seveny=(seveny/height)*map.clientHeight;
-                    eightx=(eightx/width)*map.clientWidth;
-                    eighty=(eighty/height)*map.clientHeight;
-                    ninex=(ninex/width)*map.clientWidth;
-                    niney=(niney/height)*map.clientHeight;
-                    tenx=(tenx/width)*map.clientWidth;
-                    teny=(teny/height)*map.clientHeight;
-                    elevenx=(elevenx/width)*map.clientWidth;
-                    eleveny=(eleveny/height)*map.clientHeight;
-                    twelvex=(twelvex/width)*map.clientWidth;
-                    twelvey=(twelvey/height)*map.clientHeight;
-                    thirteenx=(thirteenx/width)*map.clientWidth;
-                    thirteeny=(thirteeny/height)*map.clientHeight;
-                    fourteenx=(fourteenx/width)*map.clientWidth;
-                    fourteeny=(fourteeny/height)*map.clientHeight;
-                    fifteenx=(fifteenx/width)*map.clientWidth;
-                    fifteeny=(fifteeny/height)*map.clientHeight;
-                    fooda.coords=onex.toString()+","+oney.toString()+","+radius.toString();
-                    foodb.coords=twox.toString()+","+twoy.toString()+","+radius.toString();
-                    foodc.coords=threex.toString()+","+threey.toString()+","+radius.toString();
-                    foodd.coords=fourx.toString()+","+foury.toString()+","+radius.toString();
-                    foode.coords=fivex.toString()+","+fivey.toString()+","+radius.toString();
-                    foodf.coords=sixx.toString()+","+sixy.toString()+","+radius.toString();
-                    foodg.coords=sevenx.toString()+","+seveny.toString()+","+radius.toString();
-                    foodh.coords=eightx.toString()+","+eighty.toString()+","+radius.toString();
-                    foodi.coords=ninex.toString()+","+niney.toString()+","+radius.toString();
-                    foodj.coords=tenx.toString()+","+teny.toString()+","+radius.toString();
-                    foodk.coords=elevenx.toString()+","+eleveny.toString()+","+radius.toString();
-                    foodl.coords=twelvex.toString()+","+twelvey.toString()+","+radius.toString();
-                    foodm.coords=thirteenx.toString()+","+thirteeny.toString()+","+radius.toString();
-                    foodn.coords=fourteenx.toString()+","+fourteeny.toString()+","+radius.toString();
-                    foodo.coords=fifteenx.toString()+","+fifteeny.toString()+","+radius.toString();
+                    var radius = 10;
+                    radius = (radius / width) * map.clientWidth;
+                    var onex = 655, oney = 966;
+                    var twox = 724, twoy = 1235;
+                    var threex = 816, threey = 1082;
+                    var fourx = 769, foury = 1187;
+                    var fivex = 711, fivey = 1178;
+                    var sixx = 697, sixy = 1108;
+                    var sevenx = 708, seveny = 1074;
+                    var eightx = 696, eighty = 1042;
+                    var ninex = 599, niney = 800;
+                    var tenx = 622, teny = 976;
+                    var elevenx = 508, eleveny = 866;
+                    var twelvex = 523, twelvey = 898;
+                    var thirteenx = 606, thirteeny = 856;
+                    var fourteenx = 610, fourteeny = 673;
+                    var fifteenx = 744, fifteeny = 1153;
+                    onex = (onex / width) * map.clientWidth;
+                    oney = (oney / height) * map.clientHeight;
+                    twox = (twox / width) * map.clientWidth;
+                    twoy = (twoy / height) * map.clientHeight;
+                    threex = (threex / width) * map.clientWidth;
+                    threey = (threey / height) * map.clientHeight;
+
+                    fourx = (fourx / width) * map.clientWidth;
+                    foury = (foury / height) * map.clientHeight;
+                    fivex = (fivex / width) * map.clientWidth;
+                    fivey = (fivey / height) * map.clientHeight;
+                    sixx = (sixx / width) * map.clientWidth;
+                    sixy = (sixy / height) * map.clientHeight;
+                    sevenx = (sevenx / width) * map.clientWidth;
+                    seveny = (seveny / height) * map.clientHeight;
+                    eightx = (eightx / width) * map.clientWidth;
+                    eighty = (eighty / height) * map.clientHeight;
+                    ninex = (ninex / width) * map.clientWidth;
+                    niney = (niney / height) * map.clientHeight;
+                    tenx = (tenx / width) * map.clientWidth;
+                    teny = (teny / height) * map.clientHeight;
+                    elevenx = (elevenx / width) * map.clientWidth;
+                    eleveny = (eleveny / height) * map.clientHeight;
+                    twelvex = (twelvex / width) * map.clientWidth;
+                    twelvey = (twelvey / height) * map.clientHeight;
+                    thirteenx = (thirteenx / width) * map.clientWidth;
+                    thirteeny = (thirteeny / height) * map.clientHeight;
+                    fourteenx = (fourteenx / width) * map.clientWidth;
+                    fourteeny = (fourteeny / height) * map.clientHeight;
+                    fifteenx = (fifteenx / width) * map.clientWidth;
+                    fifteeny = (fifteeny / height) * map.clientHeight;
+                    fooda.coords = onex.toString() + "," + oney.toString() + "," + radius.toString();
+                    foodb.coords = twox.toString() + "," + twoy.toString() + "," + radius.toString();
+                    foodc.coords = threex.toString() + "," + threey.toString() + "," + radius.toString();
+                    foodd.coords = fourx.toString() + "," + foury.toString() + "," + radius.toString();
+                    foode.coords = fivex.toString() + "," + fivey.toString() + "," + radius.toString();
+                    foodf.coords = sixx.toString() + "," + sixy.toString() + "," + radius.toString();
+                    foodg.coords = sevenx.toString() + "," + seveny.toString() + "," + radius.toString();
+                    foodh.coords = eightx.toString() + "," + eighty.toString() + "," + radius.toString();
+                    foodi.coords = ninex.toString() + "," + niney.toString() + "," + radius.toString();
+                    foodj.coords = tenx.toString() + "," + teny.toString() + "," + radius.toString();
+                    foodk.coords = elevenx.toString() + "," + eleveny.toString() + "," + radius.toString();
+                    foodl.coords = twelvex.toString() + "," + twelvey.toString() + "," + radius.toString();
+                    foodm.coords = thirteenx.toString() + "," + thirteeny.toString() + "," + radius.toString();
+                    foodn.coords = fourteenx.toString() + "," + fourteeny.toString() + "," + radius.toString();
+                    foodo.coords = fifteenx.toString() + "," + fifteeny.toString() + "," + radius.toString();
 
                     console.log(fooda);
                 </script>
@@ -365,8 +377,8 @@
                 <img src="images/food/bai-tung-guo2.JPG" alt="beef">
                 <a class="close-button" data-close>&#215;</a>
             </div>
+end home-content -->
 
-           
         </div> <!-- end section-header -->
     </section> <!-- end  food map -->
 
@@ -379,7 +391,8 @@
                     <span>© Copyright 2019 SmileWanli </span>
                 </div>
                 <div class="go-top">
-                    <a class="smoothscroll" title="Back to Top" href="#top"><i class="icon-arrow-up" aria-hidden="true"></i></a>
+                    <a class="smoothscroll" title="Back to Top" href="#top"><i class="icon-arrow-up"
+                            aria-hidden="true"></i></a>
                 </div>
             </div>
 
@@ -394,7 +407,6 @@
 
     <script>
         $(document).foundation();
-        
     </script>
 
 </body>
